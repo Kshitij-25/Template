@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:musk_motor/screens/weather.dart';
 import 'package:musk_motor/widget/image_input.dart';
 import 'package:musk_motor/widget/textColumn.dart';
 
@@ -18,93 +19,97 @@ class AddCar extends StatelessWidget {
         backgroundColor: Color(0xFFF4EFF6),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  MaterialButton(
-                    onPressed: () {},
-                    color: Colors.green,
-                    shape: CircleBorder(),
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    'Add Car',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      fontSize: 25,
-                    ),
-                  )
-                ],
-              ),
-              Container(
-                padding: const EdgeInsets.all(15),
-                child: Column(
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Row(
                   children: <Widget>[
-                    TextColumn(
-                      hint: 'Name',
+                    MaterialButton(
+                      onPressed: () {},
+                      color: Colors.green,
+                      shape: CircleBorder(),
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      ),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    TextColumn(
-                      hint: 'License plate',
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    TextColumn(
-                      hint: 'Car Manufacturer',
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    TextColumn(
-                      hint: 'Car model',
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    TextColumn(
-                      hint: 'Registered state',
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          'Set car as default',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Switch.adaptive(
-                          value: true,
-                          onChanged: null,
-                          activeColor: Colors.green,
-                        )
-                      ],
-                    ),
-                    ImageInput(_selectImage),
+                    Text(
+                      'Add Car',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 25,
+                      ),
+                    )
                   ],
                 ),
-              ),
-              RaisedButton.icon(
-                color: Colors.green,
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_forward,
-                  color: Colors.white,
+                Container(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: <Widget>[
+                      TextColumn(
+                        hint: 'Name',
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      TextColumn(
+                        hint: 'License plate',
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      TextColumn(
+                        hint: 'Car Manufacturer',
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      TextColumn(
+                        hint: 'Car model',
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      TextColumn(
+                        hint: 'Registered state',
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            'Set car as default',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Switch.adaptive(
+                            value: true,
+                            onChanged: null,
+                            activeColor: Colors.green,
+                          )
+                        ],
+                      ),
+                      ImageInput(_selectImage),
+                    ],
+                  ),
                 ),
-                label: Text(
-                  'Add Car',
-                  style: TextStyle(color: Colors.white),
-                ),
-              )
-            ],
+                RaisedButton.icon(
+                  color: Colors.green,
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Weather.routeName);
+                  },
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: Colors.white,
+                  ),
+                  label: Text(
+                    'Weather',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

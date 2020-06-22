@@ -10,135 +10,138 @@ class SignUp extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFF4EFF6),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            ClipPath(
-              clipper: MyClipper(),
-              child: Container(
-                height: MediaQuery.of(context).size.width / 3.5,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.green,
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              ClipPath(
+                clipper: MyClipper(),
+                child: Container(
+                  height: MediaQuery.of(context).size.width / 3.5,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text('Hello, nice to meet you!'),
-                  Text(
-                    'Create account',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
-                  ),
-                  Row(
-                    children: <Widget>[
-                      FaIcon(
-                        FontAwesomeIcons.facebook,
-                        color: Colors.green,
-                        size: 35,
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'Sign up with Facebook',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text('Hello, nice to meet you!'),
+                    Text(
+                      'Create account',
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        FaIcon(
+                          FontAwesomeIcons.facebook,
                           color: Colors.green,
+                          size: 35,
                         ),
-                      ),
-                      MaterialButton(
-                        onPressed: () {},
-                        color: Colors.green,
-                        shape: CircleBorder(),
-                        child: Icon(
-                          Icons.arrow_forward,
-                          color: Colors.white,
+                        SizedBox(
+                          width: 20,
                         ),
-                      )
-                    ],
-                  ),
-                  Divider(
-                    color: Colors.grey,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextColumn(
-                    hint: 'E-mail',
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextColumn(
-                    hint: 'Full name',
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextColumn(
-                    hint: 'Password',
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Text(
-                        'Has at least 8 characters',
-                        style: TextStyle(
+                        Text(
+                          'Sign up with Facebook',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.green,
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {},
                           color: Colors.green,
-                          fontWeight: FontWeight.bold,
+                          shape: CircleBorder(),
+                          child: Icon(
+                            Icons.arrow_forward,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                    Divider(
+                      color: Colors.grey,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextColumn(
+                      hint: 'E-mail',
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextColumn(
+                      hint: 'Full name',
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextColumn(
+                      hint: 'Password',
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Text(
+                          'Has at least 8 characters',
+                          style: TextStyle(
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Has at least 1 number',
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextColumn(
-                    hint: 'Confirm Password',
-                  ),
-                ],
-              ),
-            ),
-            Text(
-              'By creating an account you agree to our \nTerms of Service and Privacy Policy',
-              textAlign: TextAlign.center,
-            ),
-            RaisedButton(
-              onPressed: () {},
-              color: Colors.green,
-              child: Text(
-                'Sign Up',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pushNamed(SignIn.routeName);
-              },
-              child: Text(
-                'Already have an account? Sign in',
-                style: TextStyle(
-                  color: Colors.green,
-                  fontWeight: FontWeight.bold,
+                        Text(
+                          'Has at least 1 number',
+                          style: TextStyle(
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextColumn(
+                      hint: 'Confirm Password',
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ],
+              Text(
+                'By creating an account you agree to our \nTerms of Service and Privacy Policy',
+                textAlign: TextAlign.center,
+              ),
+              RaisedButton(
+                onPressed: () {},
+                color: Colors.green,
+                child: Text(
+                  'Sign Up',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed(SignIn.routeName);
+                },
+                child: Text(
+                  'Already have an account? Sign in',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

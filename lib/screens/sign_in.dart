@@ -11,119 +11,122 @@ class SignIn extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFF4EFF6),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            ClipPath(
-              clipper: MyClipper(),
-              child: Container(
-                height: MediaQuery.of(context).size.width / 1.5,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.green,
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              ClipPath(
+                clipper: MyClipper(),
+                child: Container(
+                  height: MediaQuery.of(context).size.width / 1.5,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                  ),
                 ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text('Hello, nice to meet you!'),
-                  Text(
-                    'Log into your account',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextColumn(
-                    hint: 'E-mail',
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextColumn(
-                    hint: 'Password',
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'Forgot password?',
-                    style: TextStyle(
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text('Hello, nice to meet you!'),
+                    Text(
+                      'Log into your account',
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
                     ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Align(
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(AddCar.routeName);
-                      },
-                      color: Colors.green,
-                      child: Text(
-                        'Login',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                    SizedBox(
+                      height: 10,
                     ),
-                  ),
-                  Divider(
-                    color: Colors.grey,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      FaIcon(
-                        FontAwesomeIcons.facebook,
+                    TextColumn(
+                      hint: 'E-mail',
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextColumn(
+                      hint: 'Password',
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'Forgot password?',
+                      style: TextStyle(
                         color: Colors.green,
-                        size: 35,
+                        fontWeight: FontWeight.bold,
                       ),
-                      SizedBox(
-                        width: 20,
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Align(
+                      child: RaisedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(AddCar.routeName);
+                        },
+                        color: Colors.green,
+                        child: Text(
+                          'Login',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
-                      Text(
-                        'Login with Facebook',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
+                    ),
+                    Divider(
+                      color: Colors.grey,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        FaIcon(
+                          FontAwesomeIcons.facebook,
                           color: Colors.green,
+                          size: 35,
                         ),
-                      ),
-                      MaterialButton(
-                        onPressed: () {},
-                        color: Colors.green,
-                        shape: CircleBorder(),
-                        child: Icon(
-                          Icons.arrow_forward,
-                          color: Colors.white,
+                        SizedBox(
+                          width: 20,
                         ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Text(
-              'By creating an account you agree to our \nTerms of Service and Privacy Policy',
-              textAlign: TextAlign.center,
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pushNamed(SignUp.routeName);
-              },
-              child: Text(
-                'Dont have an account?',
-                style: TextStyle(
-                  color: Colors.green,
-                  fontWeight: FontWeight.bold,
+                        Text(
+                          'Login with Facebook',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.green,
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {},
+                          color: Colors.green,
+                          shape: CircleBorder(),
+                          child: Icon(
+                            Icons.arrow_forward,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ],
+              Text(
+                'By creating an account you agree to our \nTerms of Service and Privacy Policy',
+                textAlign: TextAlign.center,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed(SignUp.routeName);
+                },
+                child: Text(
+                  'Dont have an account?',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
