@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musk_motor/screens/add_car.dart';
 import 'package:musk_motor/screens/sign_in.dart';
 import 'package:musk_motor/screens/sign_up.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SignIn.routeName: (ctx) => SignIn(),
         SignUp.routeName: (ctx) => SignUp(),
+        AddCar.routeName: (ctx) => AddCar(),
       },
       home: SignUp(),
     );
