@@ -16,4 +16,44 @@ class Api {
       throw Exception('Failed to load');
     }
   }
+  Future<Weather_model> getWeather1() async {
+    final response = await http.get('$url?access_key=$apiKey&query=london');
+    if (response.statusCode == 200) {
+      return Weather_model.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load');
+    }
+  }
+  Future<Weather_model> getWeather2() async {
+    final response = await http.get('$url?access_key=$apiKey&query=Singapur');
+    if (response.statusCode == 200) {
+      return Weather_model.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load');
+    }
+  }
+  Future<Weather_model> getWeather3() async {
+    final response = await http.get('$url?access_key=$apiKey&query=Shanghai');
+    if (response.statusCode == 200) {
+      return Weather_model.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load');
+    }
+  }
+  Future<Weather_model> getWeather4() async {
+    final response = await http.get('$url?access_key=$apiKey&query=Mumbai');
+    if (response.statusCode == 200) {
+      return Weather_model.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load');
+    }
+  }
+  Future<Weather_model> getWeather5() async {
+    final response = await http.get('$url?access_key=$apiKey&query=Delhi');
+    if (response.statusCode == 200) {
+      return Weather_model.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load');
+    }
+  }
 }
